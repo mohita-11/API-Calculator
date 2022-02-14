@@ -3,11 +3,14 @@
     "",
     "\\api",
     "\\api\\bin",
+    "\\api\\models",
+    "\\api\\routes",
     "\\ui",
+    "\\ui\\customer-ui",
     "\\ui\\customer-ui\\.angular",
     "\\ui\\customer-ui\\src",
     "\\ui\\customer-ui\\src\\app"
   ],
-  "SelectedNode": "\\api\\bin\\www",
+  "SelectedNode": "\\ui\\customer-ui\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }
