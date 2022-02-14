@@ -49,7 +49,7 @@ app.post('/api/customers/send', function (req, res) {
         if (err)
             res.send(err);
         res.json({ message: 'customer created!' });
-        // console.log(req.body.customerName);
+        
     });
 });
 
@@ -73,7 +73,8 @@ app.post('/api/pollutants/send', function (req, res) {
     var pollutant = new Pollutant(); // create a new instance of the student model
     pollutant.pollutantName = req.body.pollutantName; // set the student name (comes from the request)
     pollutant.pollutantConcentration = req.body.pollutantConcentration;
-   
+
+
     pollutant.save(function (err) {
         if (err)
             res.send(err);
