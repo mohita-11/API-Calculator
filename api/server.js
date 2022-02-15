@@ -55,18 +55,7 @@ app.post('/api/customers/send', function (req, res) {
 
 
 var Pollutant = require('./models/pollutant');
-
-//GET pollutant details
-app.get('/api/pollutants', function (req, res) {
-    // use mongoose to get all customers in the database
-    Pollutant.find(function (err, pollutants) {
-        // if there is an error retrieving, send the error.
-        // nothing after res.send(err) will execute
-        if (err)
-            res.send(err);
-        res.json(pollutants); // return all customers in JSON format
-    });
-});
+var AqiCalculator = require('./calculator/aqi.calculator');
 
 //POST pollutant details
 app.post('/api/pollutants/send', function (req, res) {
@@ -74,11 +63,12 @@ app.post('/api/pollutants/send', function (req, res) {
     pollutant.pollutantName = req.body.pollutantName; // set the student name (comes from the request)
     pollutant.pollutantConcentration = req.body.pollutantConcentration;
 
+    var aqi = AqiCalculator(pollutant.pollutantConcentration);
 
     pollutant.save(function (err) {
         if (err)
             res.send(err);
-        res.json({ message: 'pollutant created!' });
+        res.json({ message: `aqi is ${aqi}` });
       
     });
 });
