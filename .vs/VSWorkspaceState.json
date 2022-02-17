@@ -1,12 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\angular",
+    "\\angular\\src",
+    "\\angular\\src\\app",
+    "\\angular\\src\\app\\service",
+    "\\angular\\src\\components",
+    "\\angular\\src\\components\\customer-create",
+    "\\angular\\src\\components\\pollutant-create",
     "\\api",
-    "\\api\\bin",
-    "\\api\\models",
-    "\\ui",
-    "\\ui\\public"
+    "\\api\\models"
   ],
-  "SelectedNode": "\\api\\server.js",
+  "SelectedNode": "\\angular\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

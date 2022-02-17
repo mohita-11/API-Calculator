@@ -1,0 +1,22 @@
+<h2 align="middle">Create Customer</h2>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="email">
+      Email
+    </label>
+    <br />
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div>
+    <label for="password">
+      Password
+    </label>
+    <br />
+    <input id="password" type="text" formControlName="password">
+  </div>
+  <br />
+  <button class="button" type="submit">Sign Up</button>
+
+</form>
