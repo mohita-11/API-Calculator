@@ -6,14 +6,16 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerCreateComponent } from '../components/customer-create/customer-create.component';
-import { PollutantCreateComponent } from '../components/pollutant-create/pollutant-create.component';
+import { CustomerCreateComponent } from 'src/components/customer-create/customer-create.component';
+import { PollutantCreateComponent } from 'src/components/pollutant-create/pollutant-create.component';
+import { RootComponent } from 'src/components/root/root.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerCreateComponent,
-    PollutantCreateComponent
+    PollutantCreateComponent,
+    RootComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,6 @@ import { PollutantCreateComponent } from '../components/pollutant-create/polluta
   providers: [
     ApiService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, RootComponent]
 })
 export class AppModule { }
