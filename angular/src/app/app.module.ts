@@ -28,6 +28,6 @@ import { RootComponent } from 'src/components/root/root.component';
   providers: [
     ApiService
   ],
-  bootstrap: [AppComponent, RootComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

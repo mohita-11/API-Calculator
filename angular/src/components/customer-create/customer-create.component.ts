@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, NgModel  } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, NgModel } from '@angular/forms';
+import axios from 'axios'; 
 
 @Component({
   selector: 'app-customer-create',
@@ -16,10 +17,19 @@ export class CustomerCreateComponent implements OnInit {
     password: ''
   });
 
-  public onSubmit(): void {
+  public async onSubmit() {
     // Process checkout data here
-
-    alert(this.checkoutForm.value.email);
+    const data = await axios.post('http://localhost:3000/api/customers/send', {
+      email: this.checkoutForm.value.email,
+      password: this.checkoutForm.value.password
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    //alert(this.checkoutForm.value.email);
     
   }
 

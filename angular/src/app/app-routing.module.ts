@@ -4,9 +4,9 @@ import { CustomerCreateComponent } from '../components/customer-create/customer-
 import { PollutantCreateComponent } from '../components/pollutant-create/pollutant-create.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'customer-create' },
   { path: 'customer-create', component: CustomerCreateComponent },
-  { path: 'pollutant-create', component: PollutantCreateComponent }
+  { path: 'pollutant-create', component: PollutantCreateComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'customer-create' }
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ export class RootComponent implements OnInit {
   constructor(private rootService: RootService) { }
 
   ngOnInit() {
-    this.rootService.getAPIData().subscribe((response) => {
+    /*this.rootService.getAPIData().subscribe((response) => {
       console.log('response is ', response)
     }, (error) => {
       console.log('error is ', error)
@@ -21,7 +21,7 @@ export class RootComponent implements OnInit {
       console.log('response from post data is ', response);
     }, (error) => {
       console.log('error during post is ', error)
-    })
+    })*/
   }
 
 }

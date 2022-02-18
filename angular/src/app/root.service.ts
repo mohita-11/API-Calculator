@@ -8,11 +8,8 @@ export class RootService {
 
   constructor(private http: HttpClient) { }
 
-  getAPIData() {
-    return this.http.get('https://jsonplaceholder.typicode.com/users')
-  }
 
   postAPIData() {
-    return this.http.post('/api/postData', { 'email': '', 'password': '' })
+    return this.http.post('http://localhost:3000/api/customers/send', { 'email': '', 'password': '' })
   }
 }

@@ -1,8 +1,10 @@
 // modules =================================================
 const express = require('express');
 const app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+app.use(cors());
 app.use(bodyParser.json());
 
 
@@ -13,7 +15,18 @@ const port = 3000;
 // config files
 var db = require('./config/db');
 console.log("connecting--", db);
-mongoose.connect(db.url); //Mongoose connection created
+
+mongoose.connect(db.url,{useNewUrlParser:true,
+    useUnifiedTopology: true, connectTimeoutMS: 1000}).then(() => {
+        console.log(`successfully connected`);
+    }).catch((e) => {
+        console.log(e);
+    })
+
+/*mongoose.connect(db.url, {
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 10000,
+}, () => { console.log('Connected successfully to MongoDB')});*/ //Mongoose connection created
 // frontend routes =========================================================
 app.get('/', (req, res) => res.send('Welcome to Tutorialspoint!'));
 
@@ -40,14 +53,17 @@ var Customer = require('./api/models/customer');
 
 //POST customer details
 app.post('/api/customers/send', function (req, res) {
-    var customer = new Customer(); // create a new instance of the student model
-    customer.customerName = req.body.customerName; // set the student name (comes from the request)
+    const customer = new Customer(); // create a new instance of the student model
+    //customer.customerName = req.body.customerName; // set the student name (comes from the request)
     customer.emailAddress = req.body.emailAddress;
     customer.password = req.body.password;
     customer.save(function (err) {
-        if (err)
-            res.send(err);
-        res.json({ message: 'customer created!' });
+        if (err) {
+            console.log(err);
+            return res.send(err);
+        }
+           
+        return res.json({ message: 'customer created!' });
         
     });
 });

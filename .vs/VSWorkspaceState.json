@@ -4,13 +4,13 @@
     "\\angular",
     "\\angular\\src",
     "\\angular\\src\\app",
-    "\\angular\\src\\app\\service",
     "\\angular\\src\\components",
-    "\\angular\\src\\components\\customer-create",
-    "\\angular\\src\\components\\pollutant-create",
+    "\\angular\\src\\components\\root",
+    "\\angular\\src\\environments",
     "\\api",
-    "\\api\\models"
+    "\\api\\calculator",
+    "\\config"
   ],
-  "SelectedNode": "\\angular\\src\\app\\app.module.ts",
+  "SelectedNode": "\\angular\\src\\components\\customer-create\\customer-create.component.html",
   "PreviewInSolutionExplorer": false
 }
